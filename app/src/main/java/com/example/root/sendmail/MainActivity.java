@@ -26,14 +26,13 @@ public class MainActivity extends ActionBarActivity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        //  http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_(no_Intents)_in_Android
-
+        
         Button addImage = (Button) findViewById(R.id.send_email);
         addImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Mail m = new Mail("autoresponder.reply@gmail.com", "autoresponder123");
+                Mail m = new Mail("yourgmailaccount", "yourgmailpasswordaccount");
 
-                String[] toArr = {"rene.soto01@iest.edu.mx","rene.soto@krow.mx","carlos.galarza@iest.edu.mx"};
+                String[] toArr = {"person@hotmail.com","other@gmail.com};
                 m.setTo(toArr);
                 m.setFrom("autoresponder.reply@gmail.com");
                 m.setSubject("This is an email sent using my Mail JavaMail wrapper from an Android device.");
